@@ -1,16 +1,16 @@
 name: Environment Variables
 env:
-  WORKSPACE_ENVIRONMENT_VARIABLE: workspace
+  WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable for ${{ github.workflow }}'
 on: [push]
 jobs:
   ubuntu:
     env:
-      JOB_ENVIRONMENT_VARIABLE: jobs
+      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for $${{ runner.os }} '
     runs-on: ubuntu-latest
     steps:
       - name: Print custom environment variables from ubuntu-latest
         env:
-          STEP_ENVIRONMENT_VARIABLE: step
+          STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable'
         run: |
           echo "Accessing environment variables in run command"
           echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
@@ -23,12 +23,12 @@ jobs:
           echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
   windows:
     env:
-      JOB_ENVIRONMENT_VARIABLE: jobs
+      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for $${{ runner.os }} '
     runs-on: windows-latest
     steps:
       - name: Print custom environment variables from windows-latest
         env:
-          STEP_ENVIRONMENT_VARIABLE: step
+          STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable'
         run: |
           echo "Accessing environment variables in run command"
           echo "$Env:WORKSPACE_ENVIRONMENT_VARIABLE"
