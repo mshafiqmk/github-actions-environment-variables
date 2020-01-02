@@ -1,14 +1,17 @@
 name: Custom Environment Variables
 env:
-  WORKSPACE_ENVIRONMENT_VARIABLE: value
+  WORKSPACE_ENVIRONMENT_VARIABLE: workspace
 on: [push]
 jobs:
-  job_id:
+  job1:
     env:
-      JOB_ENVIRONMENT_VARIABLE: value
+      JOB_ENVIRONMENT_VARIABLE: jobs
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout project code
-      uses: actions/checkout@v1
-      env:
-        STEP_ENVIRONMENT_VARIABLE: value
+      - env:
+          STEPS_ENVIRONMENT_VARIABLE: steps
+      - name: Print environment variables
+        env:
+          COMMAND_ENVIRONMENT_VARIABLE: action_command
+        run: |
+          echo $COMMAND_ENVIRONMENT_VARIABLE
