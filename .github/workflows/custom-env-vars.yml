@@ -8,8 +8,6 @@ jobs:
       JOB_ENVIRONMENT_VARIABLE: jobs
     runs-on: ubuntu-latest
     steps:
-      - env:
-          STEPS_ENVIRONMENT_VARIABLE: steps
       - name: Print environment variables
         env:
           COMMAND_ENVIRONMENT_VARIABLE: action_command
