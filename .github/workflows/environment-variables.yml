@@ -20,6 +20,4 @@ jobs:
           echo "Accessing environment variables using env context"
           echo env.WORKSPACE_ENVIRONMENT_VARIABLE=${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}
           echo env.JOB_ENVIRONMENT_VARIABLE=${{ env.JOB_ENVIRONMENT_VARIABLE }}
-          echo env.STEP_ENVIRONMENT_VARIABLE=${{ env.STEP_ENVIRONMENT_VARIABLE }}
-      - name: Print environment variable defined in previous step
-        run: echo env.STEP_ENVIRONMENT_VARIABLE=${{ env.STEP_ENVIRONMENT_VARIABLE }}
+          echo env.STEP_ENVIRONMENT_VARIABLE=${{ env.STEP_ENVIRONMENT_VARIABLE }} # NOT DEFINED!
