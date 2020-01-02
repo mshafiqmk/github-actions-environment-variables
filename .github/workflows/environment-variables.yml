@@ -1,4 +1,4 @@
-name: Custom Environment Variables
+name: Environment Variables
 env:
   WORKSPACE_ENVIRONMENT_VARIABLE: workspace
 on: [push]
@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Print environment variables
         env:
-          COMMAND_ENVIRONMENT_VARIABLE: action_command
+          STEP_ENVIRONMENT_VARIABLE: step
         run: |
-          echo $COMMAND_ENVIRONMENT_VARIABLE
+          echo $WORKSPACE_ENVIRONMENT_VARIABLE
+          echo $JOB_ENVIRONMENT_VARIABLE
+          echo $STEP_ENVIRONMENT_VARIABLE
