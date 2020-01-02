@@ -13,14 +13,14 @@ jobs:
           STEP_ENVIRONMENT_VARIABLE: step
         run: |
           echo "Accessing environment variables in run command"
-          echo $WORKSPACE_ENVIRONMENT_VARIABLE
-          echo $JOB_ENVIRONMENT_VARIABLE
-          echo $STEP_ENVIRONMENT_VARIABLE
+          echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
+          echo "$JOB_ENVIRONMENT_VARIABLE"
+          echo "$STEP_ENVIRONMENT_VARIABLE"
           echo "------------------------------------------------------"
           echo "Accessing environment variables using env context"
-          echo ${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}
-          echo ${{ env.JOB_ENVIRONMENT_VARIABLE }}
-          echo ${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined
+          echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
+          echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
+          echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
   windows:
     env:
       JOB_ENVIRONMENT_VARIABLE: jobs
@@ -31,11 +31,11 @@ jobs:
           STEP_ENVIRONMENT_VARIABLE: step
         run: |
           echo "Accessing environment variables in run command"
-          echo $Env:WORKSPACE_ENVIRONMENT_VARIABLE
-          echo $Env:JOB_ENVIRONMENT_VARIABLE
-          echo $Env:STEP_ENVIRONMENT_VARIABLE
+          echo "$Env:WORKSPACE_ENVIRONMENT_VARIABLE"
+          echo "$Env:JOB_ENVIRONMENT_VARIABLE"
+          echo "$Env:STEP_ENVIRONMENT_VARIABLE"
           echo "------------------------------------------------------"
           echo "Accessing environment variables using env context"
-          echo ${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}
-          echo ${{ env.JOB_ENVIRONMENT_VARIABLE }}
-          echo ${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined
+          echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
+          echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
+          echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
