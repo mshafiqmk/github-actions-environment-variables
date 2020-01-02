@@ -5,7 +5,7 @@ on: [push]
 jobs:
   ubuntu:
     env:
-      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for $${{ runner.os }} '
+      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for ${{ runner.os }} '
     runs-on: ubuntu-latest
     steps:
       - name: Print custom environment variables from ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
           echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
   windows:
     env:
-      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for $${{ runner.os }} '
+      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for ${{ runner.os }} '
     runs-on: windows-latest
     steps:
       - name: Print custom environment variables from windows-latest
