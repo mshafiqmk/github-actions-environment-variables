@@ -3,12 +3,12 @@ env:
   WORKSPACE_ENVIRONMENT_VARIABLE: workspace
 on: [push]
 jobs:
-  job1:
+  ubuntu:
     env:
       JOB_ENVIRONMENT_VARIABLE: jobs
     runs-on: ubuntu-latest
     steps:
-      - name: Print custom environment variables
+      - name: Print custom environment variables from ubuntu-latest
         env:
           STEP_ENVIRONMENT_VARIABLE: step
         run: |
@@ -21,12 +21,12 @@ jobs:
           echo ${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}
           echo ${{ env.JOB_ENVIRONMENT_VARIABLE }}
           echo ${{ env.STEP_ENVIRONMENT_VARIABLE }} # NOT DEFINED!
-  job2:
+  windows:
     env:
       JOB_ENVIRONMENT_VARIABLE: jobs
     runs-on: windows-latest
     steps:
-      - name: Print custom environment variables
+      - name: Print custom environment variables from windows-latest
         env:
           STEP_ENVIRONMENT_VARIABLE: step
         run: |
