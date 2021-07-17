@@ -1,16 +1,16 @@
 name: Environment Variables
 env:
-  WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable'
+  WORKSPACE_ENVIRONMENT_VARIABLE: 'Workspace environment variable'
 on: [push]
 jobs:
   ubuntu:
     env:
-      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for ubuntu'
+      JOB_ENVIRONMENT_VARIABLE: 'Job environment variable for Ubuntu'
     runs-on: ubuntu-latest
     steps:
       - name: Print custom environment variables from ubuntu-latest
         env:
-          STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable for bash'
+          STEP_ENVIRONMENT_VARIABLE: 'Step environment variable for Bash'
         run: |
           echo "Accessing environment variables in run command"
           echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
@@ -18,17 +18,17 @@ jobs:
           echo "$STEP_ENVIRONMENT_VARIABLE"
           echo "------------------------------------------------------"
           echo "Accessing environment variables using env context"
-          echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
+          echo "1. ${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
+          echo "2. ${{ env.JOB_ENVIRONMENT_VARIABLE }}"
+          echo "3. ${{ env.STEP_ENVIRONMENT_VARIABLE }}"
   windows:
     env:
-      JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for windows'
+      JOB_ENVIRONMENT_VARIABLE: 'Job environment variable for Windows'
     runs-on: windows-latest
     steps:
       - name: Print custom environment variables from windows-latest
         env:
-          STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable for powershell'
+          STEP_ENVIRONMENT_VARIABLE: 'Step environment variable for PowerShell'
         run: |
           echo "Accessing environment variables in run command"
           echo "$Env:WORKSPACE_ENVIRONMENT_VARIABLE"
@@ -36,6 +36,6 @@ jobs:
           echo "$Env:STEP_ENVIRONMENT_VARIABLE"
           echo "------------------------------------------------------"
           echo "Accessing environment variables using env context"
-          echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
+          echo "1. ${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
+          echo "2. ${{ env.JOB_ENVIRONMENT_VARIABLE }}"
+          echo "3. ${{ env.STEP_ENVIRONMENT_VARIABLE }}"
