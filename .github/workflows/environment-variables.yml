@@ -10,7 +10,7 @@ jobs:
       OVER_RIDE: 'Job'
     runs-on: ubuntu-latest
     steps:
-      - name: Print custom environment variables from ubuntu-latest
+      - name: Print custom environment variables from ubuntu-latest ${{ env.OVER_RIDE }}
         env:
           STEP_ENVIRONMENT_VARIABLE: 'Step environment variable for Bash'
           OVER_RIDE: 'STEP'
