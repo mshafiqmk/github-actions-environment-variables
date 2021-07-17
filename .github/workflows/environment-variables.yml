@@ -6,7 +6,7 @@ on: [push]
 jobs:
   ubuntu:
     env:
-      JOB_ENVIRONMENT_VARIABLE: 'Job environment variable for Ubuntu ${{ env.OVER_RIDE }}'
+      JOB_ENVIRONMENT_VARIABLE: 'Job environment variable for Ubuntu'
       OVER_RIDE: 'Job'
     runs-on: ubuntu-latest
     steps:
